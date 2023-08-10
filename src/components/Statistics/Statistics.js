@@ -1,12 +1,12 @@
 import { Container, Title, Text } from './Statistics.styled';
 
-export const Statistics = ({ goodClicks, neutralClicks, badClicks }) => {
+export const Statistics = ({ good, neutral, bad }) => {
   return (
     <Container>
       <Title>Statistics</Title>
-      <Text>Good: {goodClicks}</Text>
-      <Text>Neutral: {neutralClicks}</Text>
-      <Text>Bad: {badClicks}</Text>
+      <Text>Good: {good}</Text>
+      <Text>Neutral: {neutral}</Text>
+      <Text>Bad: {bad}</Text>
     </Container>
   );
 };

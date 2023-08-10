@@ -2,19 +2,17 @@ import { Container, Title } from 'components/Feedback/Feedback.styled';
 import { FeedbackBtns } from 'components/FeedbackBtns/FeedbackBtns';
 
 export const Feedback = ({
-  handleClick,
-  goodClicks,
-  neutralClicks,
-  badClicks,
+  goodHandleClick,
+  neutralHandleClick,
+  badHandleClick,
 }) => {
   return (
     <Container>
       <Title>Please leave feedback</Title>
       <FeedbackBtns
-        handleClick={handleClick}
-        good={goodClicks}
-        neutral={neutralClicks}
-        bad={badClicks}
+        goodClick={goodHandleClick}
+        neutralClick={neutralHandleClick}
+        badClick={badHandleClick}
       />
     </Container>
   );
