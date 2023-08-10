@@ -1,11 +1,11 @@
 import { BtnContainer, BtnItem } from './FeedbackBtns.styled';
 
-export const FeedbackBtns = () => {
+export const FeedbackBtns = ({ handleClick, good, neutral, bad }) => {
   return (
     <BtnContainer>
-      <BtnItem>Good</BtnItem>
-      <BtnItem>Neutral</BtnItem>
-      <BtnItem>Bad</BtnItem>
+      <BtnItem onClick={handleClick}>Good</BtnItem>
+      <BtnItem onClick={handleClick}>Neutral</BtnItem>
+      <BtnItem onClick={handleClick}>Bad</BtnItem>
     </BtnContainer>
   );
 };

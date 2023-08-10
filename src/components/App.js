@@ -10,10 +10,15 @@ export class App extends Component {
     badNumbOfClicks: 0,
   };
 
+  handleClick = evt => {
+    console.log(evt);
+  };
+
   render() {
     return (
       <div>
         <Feedback
+          handleClick={this.handleClick}
           goodClicks={this.state.goodNumbOfClicks}
           neutralClicks={this.state.neutralNumbOfClicks}
           badClicks={this.state.badNumbOfClicks}
