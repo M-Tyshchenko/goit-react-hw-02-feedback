@@ -1,5 +1,6 @@
-import { Feedback } from './Feedback/Feedback';
+import { FeedbackOptions } from './Feedback/FeedbackOptions';
 import { GlobalStyles } from './GlobalStyle';
+import { Section } from './Section/Section';
 import { Statistics } from './Statistics/Statistics';
 import { Component } from 'react';
 
@@ -48,18 +49,23 @@ export class App extends Component {
   render() {
     return (
       <div>
-        <Feedback
-          goodHandleClick={this.goodBtnHandleClick}
-          neutralHandleClick={this.neutralBtnHandleClick}
-          badHandleClick={this.badBtnHandleClick}
-        />
-        <Statistics
-          good={this.state.good}
-          neutral={this.state.neutral}
-          bad={this.state.bad}
-          total={this.countTotalFeedback}
-          positivePerc={this.countPositiveFeedbackPercentage}
-        />
+        <Section title="Please leave feedback">
+          <FeedbackOptions
+            goodHandleClick={this.goodBtnHandleClick}
+            neutralHandleClick={this.neutralBtnHandleClick}
+            badHandleClick={this.badBtnHandleClick}
+          />
+        </Section>
+
+        <Section title="Statistics">
+          <Statistics
+            good={this.state.good}
+            neutral={this.state.neutral}
+            bad={this.state.bad}
+            total={this.countTotalFeedback}
+            positivePerc={this.countPositiveFeedbackPercentage}
+          />
+        </Section>
         <GlobalStyles />
       </div>
     );

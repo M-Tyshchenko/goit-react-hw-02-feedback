@@ -8,7 +8,8 @@ export const Container = styled.div`
   flex-direction: column;
 `;
 
-export const Title = styled.h1`
+export const Title = styled.h2`
   margin-bottom: 16px;
   font-weight: 700;
+  font-size: 32px;
 `;

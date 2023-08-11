@@ -1,4 +1,4 @@
-import { Container, Title, Text } from './Statistics.styled';
+import { Container, Text } from './Statistics.styled';
 
 export const Statistics = ({ good, neutral, bad, total, positivePerc }) => {
   const totalFeedback = total(good, neutral, bad);
@@ -6,7 +6,6 @@ export const Statistics = ({ good, neutral, bad, total, positivePerc }) => {
 
   return (
     <Container>
-      <Title>Statistics</Title>
       <Text>Good: {good}</Text>
       <Text>Neutral: {neutral}</Text>
       <Text>Bad: {bad}</Text>
