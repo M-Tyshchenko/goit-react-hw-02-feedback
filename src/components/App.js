@@ -12,7 +12,6 @@ export class App extends Component {
     bad: 0,
   };
 
-  
   BtnHandleClick = key => {
     this.setState(prevState => {
       return {
@@ -33,26 +32,30 @@ export class App extends Component {
   };
 
   render() {
+    const { good, neutral, bad } = this.state;
+
     return (
       <div>
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={Object.keys(this.state)}
             onLeaveFeedback={this.BtnHandleClick}
-
           />
         </Section>
 
         <Section title="Statistics">
-          {!this.state.good && !this.state.neutral && !this.state.bad ? (
+          {!good && !neutral && !bad ? (
             <Notification message="There is no feedback" />
           ) : (
             <Statistics
-              good={this.state.good}
-              neutral={this.state.neutral}
-              bad={this.state.bad}
-              total={this.countTotalFeedback}
-              positivePerc={this.countPositiveFeedbackPercentage}
+              good={good}
+              neutral={neutral}
+              bad={bad}
+              total={this.countTotalFeedback(good, neutral, bad)}
+              positivePerc={this.countPositiveFeedbackPercentage(
+                good,
+                this.countTotalFeedback(good, neutral, bad)
+              )}
             />
           )}
         </Section>
