@@ -13,7 +13,7 @@ export class App extends Component {
   };
 
   
-  BtnHandleClick = (key) => {
+  BtnHandleClick = key => {
     this.setState(prevState => {
       return {
         [key]: prevState[key] + 1,
