@@ -12,26 +12,11 @@ export class App extends Component {
     bad: 0,
   };
 
-  goodBtnHandleClick = () => {
+  
+  BtnHandleClick = (key) => {
     this.setState(prevState => {
       return {
-        good: prevState.good + 1,
-      };
-    });
-  };
-
-  neutralBtnHandleClick = () => {
-    this.setState(prevState => {
-      return {
-        neutral: prevState.neutral + 1,
-      };
-    });
-  };
-
-  badBtnHandleClick = () => {
-    this.setState(prevState => {
-      return {
-        bad: prevState.bad + 1,
+        [key]: prevState[key] + 1,
       };
     });
   };
@@ -52,9 +37,9 @@ export class App extends Component {
       <div>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            goodHandleClick={this.goodBtnHandleClick}
-            neutralHandleClick={this.neutralBtnHandleClick}
-            badHandleClick={this.badBtnHandleClick}
+            options={Object.keys(this.state)}
+            onLeaveFeedback={this.BtnHandleClick}
+
           />
         </Section>
 
