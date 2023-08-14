@@ -1,15 +1,10 @@
 import { BtnContainer, BtnItem } from './FeedbackOptions.styled';
 
-export const FeedbackOptions = ({
-  goodHandleClick,
-  neutralHandleClick,
-  badHandleClick,
-}) => {
+export const FeedbackOptions = ({options, onLeaveFeedback}) => {
   return (
     <BtnContainer>
-      <BtnItem onClick={goodHandleClick}>Good</BtnItem>
-      <BtnItem onClick={neutralHandleClick}>Neutral</BtnItem>
-      <BtnItem onClick={badHandleClick}>Bad</BtnItem>
+    {options.map(option => (
+      <BtnItem onClick={onLeaveFeedback(option.key)}>{option.key}</BtnItem>      
     </BtnContainer>
   );
 };
